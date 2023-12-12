@@ -1,5 +1,9 @@
+##find a way to have this in GIT and do a download with an include (dot source) the file ...
+##
+
+$AutomaticFunctions=get-command -CommandType Function  #do this before vars so it's not listed as 'one of myVars'
 $AutomaticVars = Get-Variable
-$AutomaticFunctions=get-command -CommandType Function 
+
 function myVars {Compare-Object (Get-Variable) $AutomaticVars -Property Name -PassThru | Where -Property Name -ne "AutomaticVars"}
 function myFunctions {Compare-Object (get-command -CommandType Function) $AutomaticFunctions -Property Name -PassThru | Where -Property Name -ne "AutomaticFunctions"}
 
